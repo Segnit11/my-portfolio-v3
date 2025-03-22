@@ -8,8 +8,8 @@ const Avatar = () => {
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
         setSmilePos({
-          x: (event.clientX - window.innerWidth / 2) * 0.02,
-          y: (event.clientY - window.innerHeight / 2) * 0.02,
+          x: (event.clientX - window.innerWidth / 2) * 0.015,
+          y: (event.clientY - window.innerHeight / 2) * 0.015,
         });
         setFacePos({
             x: (event.clientX - window.innerWidth / 2) * 0.005,
@@ -25,7 +25,7 @@ const Avatar = () => {
     <div className="relative flex flex-col items-center">
       {/* Avatar Image */}
 
-        <Image src="/body.png" alt="Avatar" width={128} height={128} className="rounded-full" />
+        <Image src="/body.png" alt="Avatar" width={128} height={128} className="rounded-full bg-gray-100" />
         <div className="absolute transform" style={{ transform: `translate(${facePos.x}px, ${facePos.y}px)` }}>
             <Image src="/face.png" alt="Smile" width={128} height={128} />
         </div>
