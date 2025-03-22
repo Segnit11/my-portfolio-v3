@@ -5,7 +5,11 @@
 // import { OrbitControls } from "@react-three/drei";
 // import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 // import * as THREE from "three";
-
+export default function Playground() {
+  return (
+    <h1>hey</h1>
+  )
+}
 // function SpinningModel() {
 //   const modelRef = useRef<THREE.Group>(null);
 //   const gltf = useLoader(GLTFLoader, "/avatar3d/avatar.gltf");
