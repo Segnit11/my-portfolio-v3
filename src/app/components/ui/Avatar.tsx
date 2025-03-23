@@ -8,12 +8,12 @@ const Avatar = () => {
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
         setSmilePos({
-          x: (event.clientX - window.innerWidth / 2) * 0.015,
-          y: (event.clientY - window.innerHeight / 2) * 0.015,
+          x: (event.clientX - window.innerWidth / 2) * 0.02,
+          y: (event.clientY - window.innerHeight / 2) * 0.02,
         });
         setFacePos({
-            x: (event.clientX - window.innerWidth / 2) * 0.005,
-            y: (event.clientY - window.innerHeight / 2) * 0.005,
+            x: (event.clientX - window.innerWidth / 2) * 0.010,
+            y: (event.clientY - window.innerHeight / 2) * 0.010,
           });
       };
 
@@ -26,10 +26,10 @@ const Avatar = () => {
       {/* Avatar Image */}
 
         <Image src="/body.png" alt="Avatar" width={128} height={128} className="rounded-full bg-gray-100" />
-        <div className="absolute transform" style={{ transform: `translate(${facePos.x}px, ${facePos.y}px)` }}>
+        <div className="absolute bottom-[-2] transform" style={{ transform: `translate(${facePos.x}px, ${facePos.y}px)` }}>
             <Image src="/face.png" alt="Smile" width={128} height={128} />
         </div>
-        <div className="absolute botton-[-2] transform" style={{ transform: `translate(${smilePos.x}px, ${smilePos.y}px)` }}>
+        <div className="absolute bottom-[-2] transform" style={{ transform: `translate(${smilePos.x}px, ${smilePos.y}px)` }}>
             <Image src="/smile.png" alt="Smile" width={128} height={128} />
         </div>
 

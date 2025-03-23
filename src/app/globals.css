@@ -1,3 +1,24 @@
 
 @import "tailwindcss";
 
+@layer utilities {
+  .fade-trace {
+    @apply relative overflow-visible transition-all duration-300;
+
+    &::after {
+      content: attr(data-tech);
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #e5372c;
+      opacity: 0;
+      transform: translate(4px, 4px);
+      transition: all 0.3s ease-out;
+      pointer-events: none;
+    }
+
+    &:hover::after {
+      opacity: 0.5;
+    }
+  }
+}
