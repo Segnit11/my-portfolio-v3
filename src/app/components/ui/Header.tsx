@@ -1,6 +1,5 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 const Header = () => {
@@ -19,7 +18,7 @@ const Header = () => {
       <nav className="flex space-x-8">
         <button
           onClick={() => scrollToSection("about")}
-          className=" w-28 px-4 py-0.5 rounded-full bg-black text-white hover:bg-grey-900"
+          className=" w-28 px-4 py-0.5 rounded-full bg-black text-white"
         >
           about
         </button>
