@@ -1,24 +1,24 @@
 
 @import "tailwindcss";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @layer utilities {
-  .fade-trace {
-    @apply relative overflow-visible transition-all duration-300;
+  .animate-jump {
+    animation: jump 0.5s ease-out;
+  }
 
-    &::after {
-      content: attr(data-tech);
-      position: absolute;
-      top: 0;
-      left: 0;
-      color: #e5372c;
-      opacity: 0;
-      transform: translate(4px, 4px);
-      transition: all 0.3s ease-out;
-      pointer-events: none;
+  @keyframes jump {
+    0% {
+      transform: translateY(0);
     }
-
-    &:hover::after {
-      opacity: 0.5;
+    50% {
+      transform: translateY(-100px);
+    }
+    100% {
+      transform: translateY(0);
     }
   }
 }

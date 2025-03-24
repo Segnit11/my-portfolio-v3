@@ -1,6 +1,6 @@
 "use client";
 
-import { FaGlobe, FaGithub } from "react-icons/fa";
+import { FaGlobe, FaGithub, FaYoutube } from "react-icons/fa";
 import Image from "next/image";
 
 interface Project {
@@ -11,54 +11,62 @@ interface Project {
   image?: string;
   website?: string;
   source?: string;
+  demo?: string;
 }
-
 const projects: Project[] = [
   {
-    title: "Chat Collect",
-    dates: "Jan 2024 – Feb 2024",
-    description:
-      "Built a SaaS to collect emails from OpenAI GPT users. Great for audience building & monetizing GPT usage.",
+    title: "Clubly",
+    dates: "Aug 2024 – Present",
+    description: `
+  Collaborated with developers, designers, and marketers to launch a platform helping 12,000+ UC Davis students discover and connect with 600+ campus organizations.
+      `,
     tags: [
-      "Next.js", "Typescript", "PostgreSQL", "Prisma",
-      "TailwindCSS", "Stripe", "Shadcn UI", "Magic UI"
+      "Svelte",
+      "SvelteKit",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Hono",
+      "Cloudflare",
+      "TailwindCSS",
     ],
-    website: "https://chatcollect.vercel.app",
+    website: "https://clubly.org",
   },
   {
-    title: "Magic UI",
-    dates: "June 2023 – Present",
+    title: "nori ai",
+    dates: "July 2024 – Aug 2024",
     description:
       "Designed, developed and sold animated UI components for developers.",
-    tags: [
-      "Next.js", "Typescript", "PostgreSQL", "Prisma",
-      "TailwindCSS", "Stripe", "Shadcn UI", "Magic UI"
-    ],
-    website: "https://magicui.dev",
-    source: "https://github.com/yourname/magic-ui",
+    tags: ["React", "Next.js", "Node.js", "Firebase", "Gemini AI"],
+    website: "https://nori-app.vercel.app/",
   },
   {
-    title: "llm.report",
-    dates: "April 2023 – Sep 2023",
-    description:
-      "Open-source logging & analytics for OpenAI: analyze usage, costs, and optimize prompts.",
+    title: "flock",
+    dates: "Feb 2023 – Feb 2023",
+    description: `
+    Built at SacHacks 2025, Flock helps international students navigate the U.S. visa process with personalized roadmaps, a fact-checked AI chatbot, and a peer support forum.
+    `,
     tags: [
-      "Next.js", "Typescript", "PostgreSQL", "Prisma",
-      "TailwindCSS", "Shadcn UI", "Magic UI", "Stripe", "Cloudflare Workers"
+      "Next.js",
+      "LangChain",
+      "OpenAI",
+      "PostgreSQL",
+      "TailwindCSS",
+      "Python",
+      "Docker",
+      "Railway",
+      "Vercel",
     ],
-    website: "https://llm.report",
-    source: "https://github.com/yourname/llm.report",
+    website: "https://sachacks2025-intlstudents.vercel.app/",
+    source: "https://github.com/PowerOfAPoint/sachacks2025-intlstudents",
+    demo: "https://www.youtube.com/watch?v=4p2W-XpW5kE&t=10s",
   },
   {
-    title: "Automatic Chat",
-    dates: "April 2023 – Mar 2024",
+    title: "Tumor Detecting Microscope",
+    dates: "Oct 2023 – Mar 2024",
     description:
-      "AI customer support chatbot that replies to support tickets using GPT.",
-    tags: [
-      "Next.js", "Typescript", "PostgreSQL", "Prisma",
-      "TailwindCSS", "Shadcn UI", "Magic UI", "Stripe", "Cloudflare Workers"
-    ],
-    website: "https://automaticchat.ai",
+      "Facilitate rapid and precise detection of dye injections in tumors.",
+    tags: ["C#", "VB.net"],
+    demo: "https://www.youtube.com/watch?v=mrX9GUh_ES8&feature=youtu.be",
   },
 ];
 
@@ -99,6 +107,16 @@ export default function Projects() {
             </div>
 
             <div className="flex gap-2 mt-4 text-xs">
+            {project.demo && (
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 px-2 py-1 border rounded-full hover:bg-gray-100 transition"
+                >
+                  <FaYoutube className="text-sm" /> Demo
+                </a>
+              )}
               {project.website && (
                 <a
                   href={project.website}
@@ -119,6 +137,7 @@ export default function Projects() {
                   <FaGithub className="text-sm" /> Source
                 </a>
               )}
+
             </div>
           </div>
         ))}
