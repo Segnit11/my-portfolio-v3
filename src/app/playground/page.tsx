@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Header from "../components/ui/Header";
 import Link from "next/link";
 
 const circleCount = 900;
@@ -9,7 +8,7 @@ const colorPalette = ["#1e9858", "#e5372c", "#f19501", "#6b42f4"];
 
 export default function Playground() {
   const [started, setStarted] = useState(false);
-  const [hideGrid, setHideGrid] = useState(false);
+  const [hideGrid] = useState(false);
 
   useEffect(() => {
     if (!started || hideGrid) return;
