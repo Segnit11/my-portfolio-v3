@@ -31,8 +31,8 @@ const Chat = () => {
     if (!input.trim()) return;
 
     const userMessage: Message = { role: "user", content: input.trim() };
-    const updatedMessages = [...messages, userMessage, { role: "assistant", content: "" }];
-    setMessages(updatedMessages);
+    // const updatedMessages = [...messages, userMessage, { role: "assistant", content: "" }];
+    // setMessages(updatedMessages);
     setInput("");
 
     try {
