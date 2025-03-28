@@ -89,7 +89,7 @@ export default function FishTank() {
             key={i}
             src={fishImages[i]}
             alt={`fish-${i}`}
-            className="absolute w-32 h-32 pointer-events-none rounded-full animate-[spin_8s_linear_infinite]"
+            className="absolute sm:h-16 w-32 h-32 pointer-events-none rounded-full animate-[spin_8s_linear_infinite]"
             style={{
               top: fish.top,
               left: fish.left,
