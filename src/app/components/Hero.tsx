@@ -13,7 +13,7 @@ const Hero = () => {
       <p className="text-2xl font-light text-gray-600 mt-1">software engineer</p>
 
       {/* Introduction Message */}
-      <div className="text-s text-center text-light mt-4 px-6 py-3 border rounded-full  max-w-xl">
+      <div className="text-sm text-center text-light mt-4 px-6 py-3 border rounded-full  max-w-xl">
       hey there, welcome to my portfolio. Take a quick look at my work, experiences, and passions. :-)      </div>
 
     </div>

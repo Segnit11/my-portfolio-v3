@@ -141,10 +141,10 @@ export default function Playground() {
         <div className="absolute inset-0 flex flex-col items-center justify-center  z-50 ">
           
           <p className="text-xl text-center max-w-md px-4 mb-6">
-            This space runs on logic and powered by creativity.
+            Runs on logic and powered by creativity. In this world and in mine.
           </p>
           <button
-            className="px-6 py-2 text-black bg-yellow-300 rounded-full hover:bg-yellow-400 transition"
+            className="px-6 py-2 text-black bg-[rgb(75, 81, 255)] rounded-full hover:bg-yellow-400 transition"
             onClick={() => setStarted(true)}
           >
             Start Playground

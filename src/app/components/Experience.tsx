@@ -69,6 +69,9 @@ export default function Experience() {
   };
 
   return (
+    <>
+    <section id="experience" className="mb-20">
+    </section>
     <section id="experience" className="mb-16">
       <h2 className="text-xl font-bold mb-4">experience</h2>
       <div className="space-y-6">
@@ -93,7 +96,7 @@ export default function Experience() {
                     {exp.projects.map((tag, index) => (
                       <span
                         key={index}
-                        className="bg-black text-white text-[10px] px-2 py-0.5 rounded-full"
+                        className="bg-black text-white text-sm px-2 py-0.5 rounded-full"
                       >
                         {tag}
                       </span>
@@ -118,5 +121,7 @@ export default function Experience() {
         ))}
       </div>
     </section>
+    </>
   );
+
 }

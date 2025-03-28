@@ -1,4 +1,7 @@
+"use client";
+
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import FishTank from "./ui/FishTank";
 
 export default function Contact() {
   return (
@@ -40,6 +43,8 @@ export default function Contact() {
           </a>
         </li>
       </ul>
+
+      <FishTank></FishTank>
     </section>
   );
 }

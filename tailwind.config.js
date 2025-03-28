@@ -14,6 +14,15 @@ module.exports = {
           black: "#24222f",
           red: "#e5372c",
         },
+        keyframes: {
+          'rotate-360': {
+            '0%': { transform: 'rotate(0deg)' },
+            '100%': { transform: 'rotate(360deg)' },
+          },
+        },
+        animation: {
+          'spin-360': 'rotate-360 4s linear infinite',
+        },
       },
     },
     plugins: [],
