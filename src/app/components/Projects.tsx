@@ -2,7 +2,6 @@
 
 import { FaGlobe, FaGithub, FaYoutube } from "react-icons/fa";
 import Image from "next/image";
-import { Video } from "lucide-react";
 
 interface Project {
   title: string;
@@ -92,18 +91,19 @@ export default function Projects() {
                 className="rounded-md mb-4 w-full h-40 object-cover"
               />
             )}
-            {project.video && (
-              <video
-                src={project.video}
-                width={600}
-                height={400}
-                className="rounded-md mb-4 w-full h-40 object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-              />
-            )}
+{project.video && (
+  <video
+    src={project.video}
+    width={600}
+    height={400}
+    className="rounded-md mb-4 w-full h-40 object-cover"
+    autoPlay
+    muted
+    loop
+    playsInline
+  />
+)}
+
 
             <h3 className="text-lg font-semibold">{project.title}</h3>
             <p className="text-xs text-gray-500">{project.dates}</p>
@@ -122,7 +122,7 @@ export default function Projects() {
             </div>
 
             <div className="flex gap-2 mt-4 text-xs">
-              {project.demo && (
+            {project.demo && (
                 <a
                   href={project.demo}
                   target="_blank"
@@ -152,6 +152,7 @@ export default function Projects() {
                   <FaGithub className="text-sm" /> Source
                 </a>
               )}
+
             </div>
           </div>
         ))}
