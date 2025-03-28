@@ -20,6 +20,8 @@ export default function Home() {
 
       <div className="min-h-screen flex flex-col items-center justify-start px-4 w-full">
         <div className="w-full max-w-2xl">
+        <div className="w-32 h-32 bg-red-400 animate-spin-360 mx-auto mt-20" />
+
           <Hero></Hero>
           <About></About>
           <TechStack></TechStack>

@@ -14,7 +14,8 @@ const Hero = () => {
 
       {/* Introduction Message */}
       <div className="text-sm text-center text-light mt-4 px-6 py-3 border rounded-full  max-w-xl">
-      hey there, welcome to my portfolio. Take a quick look at my work, experiences, and passions. :-)      </div>
+      hey there, welcome to my portfolio, really glad you're here. Feel free to take a look through my work and experiences. :-)
+      </div>
 
     </div>
   );

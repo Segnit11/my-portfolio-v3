@@ -21,7 +21,7 @@ module.exports = {
           },
         },
         animation: {
-          'spin-360': 'rotate-360 4s linear infinite',
+          'spin-360': 'rotate-360 6s linear infinite',
         },
       },
     },

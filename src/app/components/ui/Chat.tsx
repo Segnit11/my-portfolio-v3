@@ -162,11 +162,11 @@ const Chat = () => {
             <div className="mt-3 text-xs text-gray-700 flex justify-between">
               <span>rather talk to human An?</span>
               <div className="space-x-2">
-                <Link href="mailto:an@example.com" className="text-blue-600 underline">
+                <Link href="mailto:thaianle.work@gmail.com" className="text-blue-600 underline">
                   mail
                 </Link>
                 <Link
-                  href="https://linkedin.com/in/yourprofile"
+                  href="https://www.linkedin.com/in/thai-an-le/"
                   target="_blank"
                   className="text-blue-600 underline"
                 >

@@ -2,10 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 
+
 const fishImages = ["/4.png", "/2.png", "/3.png", "/5.png"];
 const FISH_SIZE = 128;
 const CONTAINER_WIDTH = 800;
-const CONTAINER_HEIGHT = 600;
+const CONTAINER_HEIGHT = 550;
 
 type Fish = {
   top: number;
@@ -89,7 +90,7 @@ export default function FishTank() {
             key={i}
             src={fishImages[i]}
             alt={`fish-${i}`}
-            className="absolute w-32 h-32 pointer-events-none animate-spin-360"
+            className="absolute w-32 h-32 pointer-events-none animate-spin "
             style={{
               top: fish.top,
               left: fish.left,

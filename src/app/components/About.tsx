@@ -18,6 +18,9 @@ export default function About() {
       
     
     return (
+      <>
+      <section id="about" className="mb-20">
+      </section>
       <section id="about" className="mb-8">
         <h2 className="text-xl font-bold">about</h2>
         <p className=" text-sm  mt-2">
@@ -38,5 +41,6 @@ export default function About() {
           
         </div>
       </section>
+      </>
     );
   }
