@@ -2,10 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 
-
 const fishImages = ["/4.png", "/2.png", "/3.png", "/5.png"];
 const FISH_SIZE = 128;
-const CONTAINER_WIDTH = 800;
+const CONTAINER_WIDTH = 570;
 const CONTAINER_HEIGHT = 550;
 
 type Fish = {
@@ -19,7 +18,7 @@ type Fish = {
 const defaultFishes: Fish[] = [
   { top: 50, left: 100, vx: 1, vy: 1 },
   { top: 200, left: 300, vx: -1, vy: 1 },
-  { top: 100, left: 500, vx: 1, vy: -1 },
+  { top: 100, left: 300, vx: 1, vy: -1 },
   { top: 300, left: 200, vx: -1, vy: -1 },
 ];
 
@@ -39,7 +38,7 @@ export default function FishTank() {
 
           // Wall collision
           if (fish.top < 0 || fish.top > CONTAINER_HEIGHT - FISH_SIZE) fish.vy *= -1;
-          if (fish.left < 0 || fish.left > CONTAINER_WIDTH - 2* FISH_SIZE) fish.vx *= -1;
+          if (fish.left < 0 || fish.left > CONTAINER_WIDTH - FISH_SIZE) fish.vx *= -1;
 
           // Fish-to-fish collision
           for (let j = i + 1; j < updated.length; j++) {
@@ -90,7 +89,7 @@ export default function FishTank() {
             key={i}
             src={fishImages[i]}
             alt={`fish-${i}`}
-            className="absolute w-32 h-32 pointer-events-none animate-spin "
+            className="absolute w-32 h-32 pointer-events-none rounded-full animate-[spin_8s_linear_infinite]"
             style={{
               top: fish.top,
               left: fish.left,

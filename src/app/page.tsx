@@ -10,23 +10,23 @@ import Projects from "./components/Projects";
 import Archive from "./components/Archives";
 import Contact from "./components/Contacts";
 
-// import { AvatarCanvas } from "./components/ui/AvatarCanvas";
-
 export default function Home() {
   return (
     <>
-      <Header></Header>
-      <Chat></Chat>
+      <Header />
+      <Chat />
 
-      <div className="min-h-screen flex flex-col items-center justify-start px-4 w-full">
-        <div className="w-full max-w-xl">
-          <Hero></Hero>
-          <About></About>
-          <TechStack></TechStack>
-          <Experience></Experience>
-          <Projects></Projects>
-          <Archive></Archive>
-          <Contact></Contact>
+      {/* Main Content Wrapper */}
+      <div className="min-h-screen flex flex-col items-center justify-start px-4 sm:px-6 md:px-8 w-full">
+        {/* Responsive max width container */}
+        <div className="w-full max-w-4xl">
+          <Hero />
+          <About />
+          <TechStack />
+          <Experience />
+          <Projects />
+          <Archive />
+          <Contact />
         </div>
       </div>
     </>

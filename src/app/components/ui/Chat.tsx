@@ -104,12 +104,12 @@ const Chat = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="absolute bottom-16 right-0 w-[50vh] bg-white rounded-xl border border-gray-400 p-4 shadow-md"
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            transition={{ duration: 0.25 }}
-          >
+  className="absolute bottom-16 right-0 w-[90vw] sm:w-[50vh] bg-white rounded-xl border border-gray-400 p-4 shadow-md max-w-sm"
+  initial={{ opacity: 0, y: 20, scale: 0.95 }}
+  animate={{ opacity: 1, y: 0, scale: 1 }}
+  exit={{ opacity: 0, y: 20, scale: 0.95 }}
+  transition={{ duration: 0.25 }}
+>
             <h2 className="text-sm font-bold mb-1">
               an ai <span className="text-gray-600 font-normal">(beta)</span>:
             </h2>

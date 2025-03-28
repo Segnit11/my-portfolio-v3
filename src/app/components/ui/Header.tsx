@@ -7,7 +7,6 @@ const Header = () => {
   const [activeSection, setActiveSection] = useState("about");
   const navItems = ["about", "experience", "projects", "contacts"];
 
-  // Scroll to section on click
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
@@ -16,11 +15,9 @@ const Header = () => {
     }
   };
 
-  // Update active section based on scroll
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-
       for (let i = navItems.length - 1; i >= 0; i--) {
         const id = navItems[i];
         const section = document.getElementById(id);
@@ -39,12 +36,12 @@ const Header = () => {
   }, []);
 
   return (
-    <section className="fixed top-0 left-0 w-full shadow-md z-50 flex justify-between items-center px-8 py-4 ">
+    <section className="fixed top-0 left-0 w-full shadow-md z-50 flex justify-between items-center px-6 py-4 bg-white">
       {/* Logo */}
-      <span className="w-28 text-xl font-bold">:-)</span>
+      <span className="text-xl font-bold">:-)</span>
 
-      {/* Navigation */}
-      <nav className="flex space-x-4">
+      {/* Desktop Navigation */}
+      <nav className="hidden sm:flex space-x-4">
         {navItems.map((id) => (
           <button
             key={id}
@@ -63,7 +60,7 @@ const Header = () => {
         ))}
       </nav>
 
-      {/* Playground Button */}
+      {/* Playground Button - Always Visible */}
       <Link
         href="/playground"
         className="w-28 px-4 py-0.5 rounded-full bg-[#e5372c] text-white hover:opacity-90 transition"
