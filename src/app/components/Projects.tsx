@@ -34,11 +34,12 @@ const projects: Project[] = [
     website: "https://clubly.org",
   },
   {
-    title: "nori ai",
+    title: "nodi ai",
     dates: "July 2024 – Aug 2024",
     description:
-      "Designed, developed and sold animated UI components for developers.",
+      "Developed an AI-powered study tool that turns files into summaries, quizzes, and flashcards winning 1st place and a $1,000 grant at FlagUp, IU's startup competition.",
     tags: ["React", "Next.js", "Node.js", "Firebase", "Gemini AI"],
+    video: "/nodi.mp4",
     website: "https://nori-app.vercel.app/",
   },
   {
@@ -50,7 +51,6 @@ const projects: Project[] = [
     tags: [
       "Next.js",
       "LangChain",
-      "OpenAI",
       "PostgreSQL",
       "TailwindCSS",
       "Python",
@@ -58,6 +58,7 @@ const projects: Project[] = [
       "Railway",
       "Vercel",
     ],
+    video: "/flock.mp4",
     website: "https://sachacks2025-intlstudents.vercel.app/",
     source: "https://github.com/PowerOfAPoint/sachacks2025-intlstudents",
     demo: "https://www.youtube.com/watch?v=4p2W-XpW5kE&t=10s",
@@ -68,6 +69,7 @@ const projects: Project[] = [
     description:
       "Facilitate rapid and precise detection of dye injections in tumors.",
     tags: ["C#", "VB.net"],
+    video: "/lab.mp4",
     demo: "https://www.youtube.com/watch?v=mrX9GUh_ES8&feature=youtu.be",
   },
 ];
