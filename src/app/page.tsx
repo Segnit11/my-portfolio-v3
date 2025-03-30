@@ -13,13 +13,13 @@ import Contact from "./components/Contacts";
 export default function Home() {
   return (
     <>
-      <Header />
       <Chat />
 
       {/* Main Content Wrapper */}
       <div className="min-h-screen flex flex-col items-center justify-start px-4 sm:px-6 md:px-8 w-full">
         {/* Responsive max width container */}
-        <div className="w-full max-w-2xl">
+        <div className="w-full max-w-xl">
+          <Header />
           <Hero />
           <About />
           <TechStack />

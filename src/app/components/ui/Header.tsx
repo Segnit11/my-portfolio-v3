@@ -36,7 +36,7 @@ const Header = () => {
   }, []);
 
   return (
-    <section className="fixed top-0 left-0 w-full shadow-md z-50 flex justify-between items-center px-6 py-4 bg-white">
+    <section className="fixed top-0 left-0 w-full shadow-md z-50 flex justify-between items-center px-6 py-4">
       {/* Logo */}
       <span className="text-xl font-bold">:-)</span>
 
