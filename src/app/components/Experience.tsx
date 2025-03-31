@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 export default function Experience() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openSet, setOpenSet] = useState<Set<number>>(new Set());
 
   const experiences = [
     {
@@ -88,18 +88,28 @@ export default function Experience() {
   ];
 
   const toggle = (i: number) => {
-    setOpenIndex(openIndex === i ? null : i);
+    setOpenSet((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(i)) {
+        newSet.delete(i); // close
+      } else {
+        newSet.add(i); // open
+      }
+      return newSet;
+    });
   };
 
   return (
-    <>
-      <section id="experience" className="mb-20">
-        <h2 className="text-xl font-bold mb-4">experience</h2>
-        <div className="space-y-6">
-          {experiences.map((exp, i) => (
+    <section id="experience" className="mb-20">
+      <h2 className="text-xl font-bold mb-4">experience</h2>
+      <div className="space-y-6">
+        {experiences.map((exp, i) => {
+          const isOpen = openSet.has(i);
+
+          return (
             <div
               key={i}
-              className="border-b pb-4 transition-all duration-300"
+              className="border-b border-gray-200 pb-4 transition-all duration-300"
             >
               <button
                 onClick={() => toggle(i)}
@@ -109,7 +119,7 @@ export default function Experience() {
                   <img
                     src={exp.image}
                     alt={`${exp.company} logo`}
-                    className="w-10 h-10 rounded-full object-cover"
+                    className="w-10 h-10 rounded-full object-cover mt-2"
                   />
                   <div>
                     <h3 className="font-semibold">{exp.role}</h3>
@@ -117,7 +127,6 @@ export default function Experience() {
                     <p className="text-xs text-gray-400">{exp.duration}</p>
                     <p className="text-sm mt-1">{exp.summary}</p>
 
-                    {/* Tags for tech */}
                     <div className="mt-2 flex flex-wrap gap-2">
                       {exp.tech.map((tag, index) => (
                         <span
@@ -131,41 +140,38 @@ export default function Experience() {
                   </div>
                 </div>
                 <div className="text-gray-400 pr-2">
-                  {openIndex === i ? (
-                    <ChevronUp size={16} />
-                  ) : (
-                    <ChevronDown size={16} />
-                  )}
+                  {isOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                 </div>
               </button>
 
-              {/* Expandable bullets + projects */}
-              {openIndex === i && (
-                <div className="mt-4 space-y-2">
-                  <ul className="list-disc pl-6 text-sm text-gray-700 space-y-1">
-                    {exp.bullets.map((point, idx) => (
-                      <li key={idx}>{point}</li>
-                    ))}
-                  </ul>
-                  <div className="mt-2 text-sm flex flex-wrap gap-2">
-                    {exp.projects.map((proj, idx) => (
-                      <a
-                        key={idx}
-                        href={proj.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 underline"
-                      >
-                        {proj.name}
-                      </a>
-                    ))}
-                  </div>
+              <div
+                className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                  isOpen ? "max-h-[500px] opacity-100 mt-4" : "max-h-0 opacity-0"
+                }`}
+              >
+                <ul className="list-disc pl-6 text-sm text-gray-700 space-y-1">
+                  {exp.bullets.map((point, idx) => (
+                    <li key={idx}>{point}</li>
+                  ))}
+                </ul>
+                <div className="mt-2 text-sm flex flex-wrap gap-2">
+                  {exp.projects.map((proj, idx) => (
+                    <a
+                      key={idx}
+                      href={proj.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 underline hover:text-blue-800 transition-colors"
+                    >
+                      {proj.name}
+                    </a>
+                  ))}
                 </div>
-              )}
+              </div>
             </div>
-          ))}
-        </div>
-      </section>
-    </>
+          );
+        })}
+      </div>
+    </section>
   );
 }
