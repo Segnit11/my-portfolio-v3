@@ -21,8 +21,8 @@ export default function FishTank() {
   });
 
   useEffect(() => {
-    // Adjust tank and fish size on smaller screens
-    const isMobile = window.innerWidth <= 640; // Tailwind sm: breakpoint
+
+    const isMobile = window.innerWidth <= 640; 
     setDimensions({
       width: isMobile ? 285 : 570,
       height: isMobile ? 275 : 550,
@@ -49,10 +49,27 @@ export default function FishTank() {
           fish.top += fish.vy * 3;
           fish.left += fish.vx * 3;
 
-          // Wall collision
-          if (fish.top < 0 || fish.top > dimensions.height - dimensions.fishSize) fish.vy *= -1;
-          if (fish.left < 0 || fish.left > dimensions.width - dimensions.fishSize) fish.vx *= -1;
+          // Wall collision - Y Axis
+          if (fish.top < 0) {
+            fish.top = 0;
+            fish.vy *= -1;
+          }
+          if (fish.top > dimensions.height - dimensions.fishSize) {
+            fish.top = dimensions.height - dimensions.fishSize;
+            fish.vy *= -1;
+          }
 
+          // Wall collision - X Axis
+          if (fish.left < 0) {
+            fish.left = 0;
+            fish.vx *= -1;
+          }
+          if (fish.left > dimensions.width - dimensions.fishSize) {
+            fish.left = dimensions.width - dimensions.fishSize;
+            fish.vx *= -1;
+          }
+
+          // Fish-to-fish collision
           // Fish-to-fish collision
           for (let j = i + 1; j < updated.length; j++) {
             const other = updated[j];
@@ -61,6 +78,7 @@ export default function FishTank() {
             const distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < dimensions.fishSize) {
+              // Swap velocities
               const tempVx = fish.vx;
               const tempVy = fish.vy;
               fish.vx = other.vx;
@@ -68,7 +86,19 @@ export default function FishTank() {
               other.vx = tempVx;
               other.vy = tempVy;
 
-              const overlap = dimensions.fishSize - distance;
+              // Apply random nudge to avoid exact mirror collisions
+              const randomNudge = () => (Math.random() - 0.5) * 0.5;
+              fish.vx += randomNudge();
+              fish.vy += randomNudge();
+              other.vx += randomNudge();
+              other.vy += randomNudge();
+
+              // Push apart
+              const minSeparation = 1;
+              const overlap = Math.max(
+                dimensions.fishSize - distance,
+                minSeparation
+              );
               const angle = Math.atan2(dy, dx);
               const pushX = (Math.cos(angle) * overlap) / 2;
               const pushY = (Math.sin(angle) * overlap) / 2;
@@ -93,7 +123,7 @@ export default function FishTank() {
     <div className="mt-12 w-full flex justify-center px-4 sm:px-0">
       <div
         ref={containerRef}
-        className="relative bg-gray-100 rounded-3xl shadow-inner overflow-hidden"
+        className="relative bg-gray-50 rounded-3xl shadow-inner overflow-hidden"
         style={{
           width: dimensions.width,
           height: dimensions.height,

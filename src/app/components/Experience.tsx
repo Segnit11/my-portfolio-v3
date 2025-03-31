@@ -76,11 +76,11 @@ export default function Experience() {
       image: "/apcs.png",
       duration: "Aug 2021 - May 2022",
       summary:
-        "Redesigned flagship e-commerce site and led a cross-functional team of 5.",
+        "Designed and taught personalized APCSA and APCSP courses, guiding three students to score 4 or higher on their AP exams.",
       bullets: [
-        "Spearheaded a successful redesign of linhlinhdan.com, the company's flagship e-commerce platform.",
-        "Led a team of 5, including content writers, developers, UI/UX designers, and marketers.",
-        "Worked closely with the CEO to develop a product roadmap, prioritize features, and manage the product backlog.",
+        "Designed a comprehensive educational curriculum for AP Computer Science A and Principles courses.",
+        "Provided personalized tutoring in programming basics, data structures, algorithms, and problem-solving.",
+        "Achieved significant improvement in students' understanding and performance in AP Computer Science courses.",
       ],
       tech: ["Adobe", "Product Management"],
       projects: [{ name: "linhlinhdan.com", url: "https://linhlinhdan.com" }],

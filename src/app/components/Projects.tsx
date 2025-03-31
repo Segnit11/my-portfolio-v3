@@ -84,7 +84,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="rounded-xl border border-gray-400 p-4 shadow-sm hover:shadow-md transition duration-300 bg-white"
+              className="rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition duration-300 bg-white"
             >
               {project.image && (
                 <Image
@@ -92,7 +92,7 @@ export default function Projects() {
                   alt={project.title}
                   width={600}
                   height={400}
-                  className="rounded-md mb-4 w-full h-40 object-cover"
+                  className="rounded-t-xl w-full h-40 object-cover"
                 />
               )}
               {project.video && (
@@ -100,14 +100,14 @@ export default function Projects() {
                   src={project.video}
                   width={600}
                   height={400}
-                  className="rounded-md mb-4 w-full h-40 object-cover"
+                  className="rounded-t-xl w-full h-40 object-cover"
                   autoPlay
                   muted
                   loop
                   playsInline
                 />
               )}
-
+          <div className="p-4">
               <h3 className="text-lg font-semibold">{project.title}</h3>
               <p className="text-xs text-gray-500">{project.dates}</p>
 
@@ -158,6 +158,7 @@ export default function Projects() {
                   </a>
                 )}
               </div>
+            </div>
             </div>
           ))}
         </div>
