@@ -144,7 +144,7 @@ export default function Playground() {
             Runs on logic and powered by creativity. In this world and in mine.
           </p>
           <button
-            className="px-6 py-2 text-black bg-[rgb(75, 81, 255)] rounded-full hover:bg-yellow-400 transition"
+            className="px-6 py-2 text-black bg-[#4B51FF] rounded-full  text-white hover:bg-[#e5372c] transition"
             onClick={() => setStarted(true)}
           >
             Start Playground

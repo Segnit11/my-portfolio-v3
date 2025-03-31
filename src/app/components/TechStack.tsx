@@ -12,7 +12,7 @@ export default function TechStack() {
           {techStack.map((tech, index) => (
             <span
               key={index}
-              className="px-4 py-1 bg-black text-white rounded-full cursor-pointer transition duration-100 ease-in-out hover:bg-[#e5372c] hover:opacity-100"
+              className="bg-gray-100 text-xs text-gray-800 px-2 py-1 rounded-full cursor-pointer transition duration- ease-in-out hover:bg-gray hover:opacity-80"
             >
               {tech}
             </span>

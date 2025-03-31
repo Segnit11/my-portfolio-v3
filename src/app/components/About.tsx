@@ -33,12 +33,43 @@ export default function About() {
           <b>Hobbies:</b> Video Editing, Cool ChatGPT Prompts, 3D-Modeling, Streaming, Badminton
         </p>
         <div className=" text-sm mt-4 flex space-x-4 text-blue-500 underline">
-         <ArrowIcon></ArrowIcon><a href="#">resume</a>
-          <a href="#">linkedin</a>
-          <a href="#">github</a>
-          <a href="#">youtube</a>
-          <a href="#">twitch</a>
-          
+        <a
+  className="flex gap-2"
+  href="https://drive.google.com/drive/folders/12cTsJccyvpVwrejRO2R2o7JuhABW4uVC?usp=sharing"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  resume
+</a>
+<a
+  href="https://www.linkedin.com/in/thai-an-le/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  linkedin
+</a>
+<a
+  href="https://github.com/xntle"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  github
+</a>
+<a
+  href="https://www.youtube.com/@_xntle"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  youtube
+</a>
+<a
+  href="https://www.twitch.tv/xntle"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  twitch
+</a>
+
         </div>
       </section>
       </>
