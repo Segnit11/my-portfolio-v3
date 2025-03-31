@@ -17,7 +17,7 @@ const Chat = () => {
     {
       role: "assistant",
       content:
-        "Hello there. I am An’s second brain. I inherit his personalities to an extent, after all i’m just an AI. You can ask me about my work, or just talk to me about your day :-)",
+        "Hello there. You can ask me about my work, or just talk to me about your day and get to know me outside of my work :-)",
     },
   ]);
 
@@ -31,8 +31,13 @@ const Chat = () => {
     if (!input.trim()) return;
 
     const userMessage: Message = { role: "user", content: input.trim() };
-    // const updatedMessages = [...messages, userMessage, { role: "assistant", content: "" }];
-    // setMessages(updatedMessages);
+    const updatedMessages: Message[] = [
+      ...messages,
+      userMessage,
+      { role: "assistant", content: "" },
+    ];
+    setMessages(updatedMessages);
+    
     setInput("");
 
     try {
