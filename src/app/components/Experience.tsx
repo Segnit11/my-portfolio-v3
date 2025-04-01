@@ -78,7 +78,7 @@ export default function Experience() {
     },
     {
       role: "Founder",
-      company: "public class APCS{}",
+      company: "public class APCS",
       image: "/apcs.png",
       duration: "Aug 2021 - May 2022",
       summary:
