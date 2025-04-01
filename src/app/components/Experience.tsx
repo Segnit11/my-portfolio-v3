@@ -83,7 +83,7 @@ export default function Experience() {
         "Provided personalized tutoring in programming basics, data structures, algorithms, and problem-solving.",
         "Achieved significant improvement in students' understanding and performance in AP Computer Science courses.",
       ],
-      tech: ["Adobe", "Product Management"],
+      tech: ["Java"],
       projects: [
         {
           name: "APCSA",
