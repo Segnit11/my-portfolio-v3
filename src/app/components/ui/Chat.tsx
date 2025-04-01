@@ -37,7 +37,7 @@ const Chat = () => {
       { role: "assistant", content: "" },
     ];
     setMessages(updatedMessages);
-    
+
     setInput("");
 
     try {
@@ -64,7 +64,10 @@ const Chat = () => {
           const last = prev[prev.length - 1];
           if (last.role !== "assistant") return prev;
 
-          return [...prev.slice(0, -1), { ...last, content: last.content + chunk }];
+          return [
+            ...prev.slice(0, -1),
+            { ...last, content: last.content + chunk },
+          ];
         });
       }
     } catch (error) {
@@ -88,8 +91,7 @@ const Chat = () => {
       {/* Trigger */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 focus:outline-none hover:scale-105 transition"
-        animate={isOpen ? { scale: 1.1 } : { scale: 1 }}
+        className="flex items-center space-x-2 focus:outline-none rounded-full hover:opacity-90 hover:-translate-y-1 transition"
       >
         {!isOpen && (
           <motion.span className="px-4 py-0.5 rounded-full bg-white border border-black text-sm">
@@ -109,12 +111,12 @@ const Chat = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-  className="absolute bottom-16 right-0 w-[90vw] sm:w-[50vh] bg-white rounded-xl border border-gray-400 p-4 shadow-md max-w-sm"
-  initial={{ opacity: 0, y: 20, scale: 0.95 }}
-  animate={{ opacity: 1, y: 0, scale: 1 }}
-  exit={{ opacity: 0, y: 20, scale: 0.95 }}
-  transition={{ duration: 0.25 }}
->
+            className="absolute bottom-16 right-0 w-[90vw] sm:w-[50vh] bg-white rounded-xl border border-gray-200 p-4 shadow-md max-w-sm"
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+            transition={{ duration: 0.25 }}
+          >
             <h2 className="text-sm font-bold mb-1">
               an ai <span className="text-gray-600 font-normal">(beta)</span>:
             </h2>
@@ -167,7 +169,10 @@ const Chat = () => {
             <div className="mt-3 text-xs text-gray-700 flex justify-between">
               <span>rather talk to human An?</span>
               <div className="space-x-2">
-                <Link href="mailto:thaianle.work@gmail.com" className="text-blue-600 underline">
+                <Link
+                  href="mailto:thaianle.work@gmail.com"
+                  className="text-blue-600 underline"
+                >
                   mail
                 </Link>
                 <Link
