@@ -79,7 +79,7 @@ export default function Home() {
 
   return (
     <>
-    <div className="scale-[0.9] origin-top">
+    <div className=" origin-top">
 
       <div
         className={`transition-opacity duration-1000 ${
@@ -87,9 +87,10 @@ export default function Home() {
         }`}
       >
         <Chat />
+        <Header />
         <div className="min-h-screen flex flex-col items-center justify-start px-4 sm:px-6 md:px-8 w-full">
           <div className="w-full max-w-xl">
-            <Header />
+  
             <Hero />
             <About />
             <TechStack />

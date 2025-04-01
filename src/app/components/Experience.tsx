@@ -54,7 +54,12 @@ export default function Experience() {
         "Automated DUET image renaming using PowerShell. Saved 10+ hours and ensured confidentiality.",
       ],
       tech: ["VB.NET", "C#", "PowerShell"],
-      projects: [{ name: "youtube video", url: "https://www.youtube.com/watch?v=mrX9GUh_ES8&feature=youtu.be" }],
+      projects: [
+        {
+          name: "youtube video",
+          url: "https://www.youtube.com/watch?v=mrX9GUh_ES8&feature=youtu.be",
+        },
+      ],
     },
     {
       role: "Product Manager",
@@ -121,46 +126,57 @@ export default function Experience() {
               key={i}
               className="border-b border-gray-300 pb-4 transition-all duration-300 animate-fadeIn "
             >
-              <button
-                onClick={() => toggle(i)}
-                className="group w-full text-left flex flex-col sm:flex-row sm:justify-between mt-2"
-              >
-                <div className="flex space-x-4 items-start">
-                  <img
-                    src={exp.image}
-                    alt={`${exp.company} logo`}
-                    className="w-10 h-10 rounded-full object-cover mt-1"
-                  />
-                  <div className="flex flex-col">
-                    <div className="flex items-center space-x-2">
-                      <h3 className="font-semibold">{exp.role}</h3>
-                      <span className="text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity animate-bounce">
-                        {isOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                      </span>
-                    </div>
-                    <p className="text-sm text-gray-600">{exp.company}</p>
-                    <p className="text-sm mt-1">{exp.summary}</p>
-                    <div className="mt-2 flex flex-wrap gap-2">
-                      {exp.tech.map((tag, index) => (
-                        <span
-                          key={index}
-                          className="bg-gray-100 text-gray-800 px-2 py-0.5 rounded-full text-xs"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+<button
+  onClick={() => toggle(i)}
+  className="group w-full text-left flex flex-col mt-2"
+>
+  {/* Top row: logo + info left, duration right */}
+  <div className="flex items-start justify-between w-full">
+    {/* Left: Logo + Company/Role */}
+    <div className="flex items-center space-x-4">
+      {/* Logo */}
+      <img
+        src={exp.image}
+        alt={`${exp.company} logo`}
+        className="w-10 h-10 rounded-full object-cover"
+      />
 
-                <div className="text-xs text-gray-400 pl-14 sm:pl-0 mt-2 sm:mt-0">
-                  {exp.duration}
-                </div>
-              </button>
+      {/* Text: Company + Role */}
+      <div>
+        <p className="font-semibold">{exp.company}</p>
+        <p className="text-sm text-gray-600">{exp.role}</p>
+      </div>
+    </div>
+
+    {/* Right: Duration */}
+    <div className="text-sm text-gray-500 whitespace-nowrap mt-1">
+      {exp.duration}
+    </div>
+  </div>
+
+  {/* Summary + Tags */}
+  <p className="text-sm mt-2">{exp.summary}</p>
+
+  <div className="mt-2 flex flex-wrap gap-2">
+    {exp.tech.map((tag, index) => (
+      <span
+        key={index}
+        className="bg-gray-100 text-gray-800 px-2 py-0.5 rounded-full text-xs"
+      >
+        {tag}
+      </span>
+    ))}
+  </div>
+</button>
+
+
+
 
               <div
                 className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                  isOpen ? "max-h-[500px] opacity-100 mt-4" : "max-h-0 opacity-0"
+                  isOpen
+                    ? "max-h-[500px] opacity-100 mt-4"
+                    : "max-h-0 opacity-0"
                 }`}
               >
                 <ul className="list-disc pl-6 text-sm text-gray-700 space-y-1">
