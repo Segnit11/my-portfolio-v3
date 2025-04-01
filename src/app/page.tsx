@@ -36,7 +36,7 @@ export default function Home() {
     }
   }, []);
 
-  // 🪄 LOADING SCREEN
+  // LOADING SCREEN
   if (!isLoaded) {
     return (
       <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white text-black  text-xl transition-opacity duration-700">
@@ -77,7 +77,6 @@ export default function Home() {
     );
   }
 
-  // 🎉 FULL SITE
   return (
     <>
     <div className="scale-[0.9] origin-top">
