@@ -24,8 +24,8 @@ export default function FishTank() {
 
     const isMobile = window.innerWidth <= 640; 
     setDimensions({
-      width: isMobile ? 300 : 570,
-      height: isMobile ? 550 : 550,
+      width: isMobile ? 320 : 570,
+      height: isMobile ? 475 : 550,
       fishSize: isMobile ? 64 : 128,
     });
 
