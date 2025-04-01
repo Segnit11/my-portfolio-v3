@@ -40,14 +40,12 @@ export default function Playground() {
 
     let animationFrameId: number | null = null;
     const handleMouseMove = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (target.closest(".no-interaction-zone")) return;
-
+        const target = e.target as HTMLElement;
+        if (target.closest(".no-interaction-zone")) return;
+      
       if (animationFrameId) return;
       animationFrameId = requestAnimationFrame(() => {
         circlePositions.forEach(({ element, centerX, centerY }) => {
-          if (element.dataset.waving === "true") return; // skip if animating
-
           const dx = e.clientX - centerX;
           const dy = e.clientY - centerY;
           const distance = Math.sqrt(dx * dx + dy * dy);
@@ -62,6 +60,7 @@ export default function Playground() {
             element.style.backgroundColor = randomColor;
             element.style.opacity = `${opacity}`;
             element.classList.remove("fade");
+            element.classList.remove("wave");
           } else {
             if (!fadeTimers.has(element)) {
               fadeTimers.set(
@@ -100,25 +99,25 @@ export default function Playground() {
     }
 
     const handleClick = (e: MouseEvent) => {
+      // wave animation
       circlePositions.forEach(({ element, centerX, centerY }) => {
         const dx = centerX - e.clientX;
         const dy = centerY - e.clientY;
         const distance = Math.sqrt(dx * dx + dy * dy);
         const delay = distance * 0.8;
-
+    
         setTimeout(() => {
-          element.dataset.waving = "true";
           element.classList.add("wave");
-
           setTimeout(() => {
             element.classList.remove("wave");
-            delete element.dataset.waving;
           }, 800);
         }, delay);
       });
-
+    
+      // immediately flicker after click
       flickerEffect(circlePositions);
     };
+    
 
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("click", handleClick);
@@ -133,46 +132,46 @@ export default function Playground() {
     <div className="relative w-screen h-screen overflow-hidden transition-colors duration-1000">
       {!started && (
         <div>
-          <Link
-            href="/"
-            className="absolute z-100 px-6 py-2 text-black bg-white hover:text-blue-600 hover:underline transition cursor-pointer no-interaction-zone"
+            <Link
+    href="/"
+    className="absolute z-50 px-6 py-2 text-black bg-white hover:text-blue-600 hover:underline transition cursor-pointer no-interaction-zone"
+    >
+    ← Back to Home
+  </Link>
+        
+        <div className="absolute inset-0 flex flex-col items-center justify-center  z-50 ">
+          
+          <p className="text-xl text-center max-w-md px-4 mb-6">
+            Runs on logic and powered by creativity. In this world and in mine.
+          </p>
+          <button
+            className="px-6 py-2 text-black bg-[#4B51FF] rounded-full  text-white hover:bg-[#e5372c] transition"
+            onClick={() => setStarted(true)}
           >
-            ← Back to Home
-          </Link>
-
-          <div className="absolute inset-0 flex flex-col items-center justify-center z-50">
-            <p className="text-xl text-center max-w-md px-4 mb-6">
-              Runs on logic and powered by creativity. In this world and in mine.
-            </p>
-            <button
-              className="px-6 py-2 bg-[#4B51FF] rounded-full text-white hover:bg-[#e5372c] transition"
-              onClick={() => setStarted(true)}
-            >
-              Start Playground
-            </button>
-          </div>
+            Start Playground
+          </button>
+        </div>
         </div>
       )}
 
-      {started && (
-        <Link
-          href="/"
-          className="absolute z-50 px-6 py-2 text-black bg-white hover:text-blue-600 hover:underline transition cursor-pointer no-interaction-zone"
-        >
-          ← Back to Home
-        </Link>
-      )}
+{started && (
+  <Link
+    href="/"
+    className="absolute z-50 px-6 py-2 text-black bg-white hover:text-blue-600 hover:underline transition cursor-pointer no-interaction-zone"
+    >
+    ← Back to Home
+  </Link>
+)}
+
 
       {started && !hideGrid && (
         <div className="absolute inset-0 grid grid-cols-[repeat(auto-fill,20px)] grid-rows-[20px] gap-10 justify-center items-center">
           {Array.from({ length: circleCount }).map((_, i) => (
-            <div
-              key={i}
-              className="circle w-[25px] h-[25px] rounded-full transition-all duration-300"
-            />
+            <div key={i} className="circle w-[25px] h-[25px] rounded-full transition-all duration-300" />
           ))}
         </div>
       )}
     </div>
   );
 }
+
