@@ -31,7 +31,7 @@ const archives: ArchiveItem[] = [
 
 export default function Archive() {
   return (
-    <section className="mb-16">
+    <section className="mt-8">
       <h2 className="text-xl font-bold mb-2">archives</h2>
       <ul className="divide-y text-sm">
         {archives.map((item, index) => (

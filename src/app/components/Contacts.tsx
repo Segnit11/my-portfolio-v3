@@ -5,7 +5,8 @@ import FishTank from "./ui/FishTank";
 
 export default function Contact() {
   return (
-    <section id="contacts" className="mb-16">
+    <>
+    <section id="contacts" className="mt-8 mb-8">
       <h2 className="text-xl font-bold mb-4">contact</h2>
       <p className="text-sm text-gray-600 mb-4">
         Feel free to reach out — I’d love to connect, collaborate, or just say hi 👋
@@ -46,5 +47,6 @@ export default function Contact() {
 
       <FishTank></FishTank>
     </section>
+    </>
   );
 }

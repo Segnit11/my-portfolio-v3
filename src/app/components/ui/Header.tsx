@@ -10,7 +10,10 @@ const Header = () => {
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      const yOffset = -50; 
+      const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+  
+      window.scrollTo({ top: y, behavior: "smooth" });
       setActiveSection(id);
     }
   };
@@ -36,7 +39,7 @@ const Header = () => {
   }, []);
 
   return (
-    <section className="fixed top-0 left-0 w-full shadow-md z-50 flex justify-between items-center px-6 py-4">
+    <section className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4">
       {/* Logo */}
       <span className="text-xl font-bold">:-)</span>
 

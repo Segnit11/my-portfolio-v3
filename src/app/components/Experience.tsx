@@ -83,7 +83,8 @@ export default function Experience() {
         "Achieved significant improvement in students' understanding and performance in AP Computer Science courses.",
       ],
       tech: ["Adobe", "Product Management"],
-      projects: [{ name: "linhlinhdan.com", url: "https://linhlinhdan.com" }],
+      projects: [{ name: "APCSA", url: "https://drive.google.com/drive/folders/1XJ-H3vIF-TrgJWGewUAqEFj6bvA64GKi" }, 
+        { name: "APCSP", url: "https://drive.google.com/drive/folders/1aozieTdWLkdw1g-RcM1jEmitWnDqroa9" }],
     },
   ];
 
@@ -100,9 +101,10 @@ export default function Experience() {
   };
 
   return (
-    <section id="experience" className="mb-20">
+    <>
+    <section id="experience" className="mb-6">
       <h2 className="text-xl font-bold mb-4">experience</h2>
-      <div className="space-y-6">
+      <div className="space-y-2">
         {experiences.map((exp, i) => {
           const isOpen = openSet.has(i);
 
@@ -113,7 +115,7 @@ export default function Experience() {
             >
               <button
                 onClick={() => toggle(i)}
-                className="w-full text-left flex items-center justify-between"
+                className="w-full text-left flex justify-between"
               >
                 <div className="flex space-x-4">
                   <img
@@ -173,5 +175,6 @@ export default function Experience() {
         })}
       </div>
     </section>
+    </>
   );
 }

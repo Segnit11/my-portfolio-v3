@@ -77,14 +77,14 @@ const projects: Project[] = [
 export default function Projects() {
   return (
     <>
-      <section id="projects" className="mb-26"></section>
-      <section id="projects" className="mb-16">
+
+      <section id="projects">
         <h2 className="text-xl font-bold mb-6">projects</h2>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition duration-300 bg-white"
+              className="rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition duration-300 bg-white"
             >
               {project.image && (
                 <Image
@@ -162,7 +162,7 @@ export default function Projects() {
             </div>
           ))}
         </div>
-      </section>
+        </section>
     </>
   );
 }
