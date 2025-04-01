@@ -126,51 +126,58 @@ export default function Experience() {
               key={i}
               className="border-b border-gray-300 pb-4 transition-all duration-300 animate-fadeIn "
             >
-<button
-  onClick={() => toggle(i)}
-  className="group w-full text-left flex flex-col mt-2"
->
-  {/* Top row: logo + info left, duration right */}
-  <div className="flex items-start justify-between w-full">
-    {/* Left: Logo + Company/Role */}
-    <div className="flex items-center space-x-4">
-      {/* Logo */}
-      <img
-        src={exp.image}
-        alt={`${exp.company} logo`}
-        className="w-10 h-10 rounded-full object-cover"
-      />
+              <button
+                onClick={() => toggle(i)}
+                className="group w-full text-left flex flex-col mt-2"
+              >
+                {/* Top row: logo + info left, duration right */}
+                <div className="flex items-start justify-between w-full">
+                  {/* Left: Logo + Company/Role */}
+                  <div className="flex items-center space-x-4">
+                    {/* Logo */}
+                    <img
+                      src={exp.image}
+                      alt={`${exp.company} logo`}
+                      className="w-10 h-10 rounded-full object-cover"
+                    />
 
-      {/* Text: Company + Role */}
-      <div>
-        <p className="font-semibold">{exp.company}</p>
-        <p className="text-sm text-gray-600">{exp.role}</p>
-      </div>
-    </div>
+                    {/* Text: Company + Role */}
+                    <div>
+                      <div className="flex flex-row">
+                        <p className="font-semibold">{exp.company}</p>
+                        <span className="ml-1 mt-1 text-gray-400">
+                          {isOpen ? (
+                            <ChevronUp size={16} />
+                          ) : (
+                            <ChevronDown size={16} />
+                          )}
+                        </span>
+                      </div>
 
-    {/* Right: Duration */}
-    <div className="text-sm text-gray-500 whitespace-nowrap mt-1">
-      {exp.duration}
-    </div>
-  </div>
+                      <p className="text-sm text-gray-600">{exp.role}</p>
+                    </div>
+                  </div>
 
-  {/* Summary + Tags */}
-  <p className="text-sm mt-2">{exp.summary}</p>
+                  {/* Right: Duration */}
+                  <div className="text-sm text-gray-500 whitespace-nowrap mt-1">
+                    {exp.duration}
+                  </div>
+                </div>
 
-  <div className="mt-2 flex flex-wrap gap-2">
-    {exp.tech.map((tag, index) => (
-      <span
-        key={index}
-        className="bg-gray-100 text-gray-800 px-2 py-0.5 rounded-full text-xs"
-      >
-        {tag}
-      </span>
-    ))}
-  </div>
-</button>
+                {/* Summary + Tags */}
+                <p className="text-sm mt-2">{exp.summary}</p>
 
-
-
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {exp.tech.map((tag, index) => (
+                    <span
+                      key={index}
+                      className="bg-gray-100 text-gray-800 px-2 py-0.5 rounded-full text-xs"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </button>
 
               <div
                 className={`transition-all duration-500 ease-in-out overflow-hidden ${
