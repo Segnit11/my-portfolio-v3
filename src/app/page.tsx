@@ -18,7 +18,7 @@ export default function Home() {
       {/* Main Content Wrapper */}
       <div className="min-h-screen flex flex-col items-center justify-start px-4 sm:px-6 md:px-8 w-full">
         {/* Responsive max width container */}
-        <div className="w-full max-w-xl">
+        <div className="w-full max-w-xl animate-fadeIn">
           <Header />
           <Hero />
           <About />

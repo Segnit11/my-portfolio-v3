@@ -70,7 +70,8 @@ export default function Experience() {
       ],
       tech: ["Adobe", "Product Management"],
       projects: [{ name: "linhlinhdan.com", url: "https://linhlinhdan.com" }],
-    },    {
+    },
+    {
       role: "Founder",
       company: "public class APCS{}",
       image: "/apcs.png",
@@ -83,8 +84,16 @@ export default function Experience() {
         "Achieved significant improvement in students' understanding and performance in AP Computer Science courses.",
       ],
       tech: ["Adobe", "Product Management"],
-      projects: [{ name: "APCSA", url: "https://drive.google.com/drive/folders/1XJ-H3vIF-TrgJWGewUAqEFj6bvA64GKi" }, 
-        { name: "APCSP", url: "https://drive.google.com/drive/folders/1aozieTdWLkdw1g-RcM1jEmitWnDqroa9" }],
+      projects: [
+        {
+          name: "APCSA",
+          url: "https://drive.google.com/drive/folders/1XJ-H3vIF-TrgJWGewUAqEFj6bvA64GKi",
+        },
+        {
+          name: "APCSP",
+          url: "https://drive.google.com/drive/folders/1aozieTdWLkdw1g-RcM1jEmitWnDqroa9",
+        },
+      ],
     },
   ];
 
@@ -101,34 +110,36 @@ export default function Experience() {
   };
 
   return (
-    <>
     <section id="experience" className="mb-6">
       <h2 className="text-xl font-bold mb-4">experience</h2>
-      <div className="space-y-2">
+      <div>
         {experiences.map((exp, i) => {
           const isOpen = openSet.has(i);
 
           return (
             <div
               key={i}
-              className="border-b border-gray-200 pb-4 transition-all duration-300"
+              className="border-b border-gray-300 pb-4 transition-all duration-300 animate-fadeIn "
             >
               <button
                 onClick={() => toggle(i)}
-                className="w-full text-left flex justify-between"
+                className="group w-full text-left flex flex-col sm:flex-row sm:justify-between mt-2"
               >
-                <div className="flex space-x-4">
+                <div className="flex space-x-4 items-start">
                   <img
                     src={exp.image}
                     alt={`${exp.company} logo`}
-                    className="w-10 h-10 rounded-full object-cover mt-2"
+                    className="w-10 h-10 rounded-full object-cover mt-1"
                   />
-                  <div>
-                    <h3 className="font-semibold">{exp.role}</h3>
+                  <div className="flex flex-col">
+                    <div className="flex items-center space-x-2">
+                      <h3 className="font-semibold">{exp.role}</h3>
+                      <span className="text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity animate-bounce">
+                        {isOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                      </span>
+                    </div>
                     <p className="text-sm text-gray-600">{exp.company}</p>
-                    <p className="text-xs text-gray-400">{exp.duration}</p>
                     <p className="text-sm mt-1">{exp.summary}</p>
-
                     <div className="mt-2 flex flex-wrap gap-2">
                       {exp.tech.map((tag, index) => (
                         <span
@@ -141,8 +152,9 @@ export default function Experience() {
                     </div>
                   </div>
                 </div>
-                <div className="text-gray-400 pr-2">
-                  {isOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+
+                <div className="text-xs text-gray-400 pl-14 sm:pl-0 mt-2 sm:mt-0">
+                  {exp.duration}
                 </div>
               </button>
 
@@ -175,6 +187,5 @@ export default function Experience() {
         })}
       </div>
     </section>
-    </>
   );
 }

@@ -35,7 +35,7 @@ export default function Archive() {
       <h2 className="text-xl font-bold mb-2">archives</h2>
       <ul className="divide-y text-sm">
         {archives.map((item, index) => (
-          <li key={index} className="py-3 border-gray-400 flex flex-col gap-1 hover:bg-gray-100 animate-fadeIn">
+          <li key={index} className="py-3 border-gray-300 flex flex-col gap-1 ease-in-out hover:bg-gray-100  hover:opacity-90">
             <div className="flex items-center gap-2">
               <span className=" ml-2 font-medium">{item.title}</span>
               {item.status && (
