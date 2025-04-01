@@ -63,7 +63,7 @@ export default function Experience() {
     },
     {
       role: "Product Manager",
-      company: "LLD POOL & SPA Company",
+      company: "LLD Pool & Spa Co.",
       image: "/lld.svg",
       duration: "Dec 2021 - Jan 2024",
       summary:
