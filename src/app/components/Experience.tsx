@@ -66,7 +66,7 @@ export default function Experience() {
       role: "Software Engineer Intern",
       company: "UC Davis Health",
       image: "/ucdhealth.svg",
-      duration: "Jul 2024 - Sep 2024",
+      duration: "Oct 2023 - Mar 2024",
       summary:
         "Built VB.NET software for tumor dye detection — improved speed and accuracy significantly.",
       bullets: [
