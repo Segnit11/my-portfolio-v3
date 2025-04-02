@@ -8,6 +8,29 @@ export default function Experience() {
 
   const experiences = [
     {
+      role: "Software Engineer",
+      company: "Aggieworks",
+      image: "/aw.jpeg",
+      duration: "Oct 2024 - current",
+      summary: "Working on clubly.org, building an internal tool for UC Davis student organizations.",
+      bullets: [
+        "Built and iterated on the admin panel for clubly.org, enabling easier club onboarding and management, helping 12,000+ UC Davis students discover and connect with 600+ campus organizations",
+        "Collaborated with fellow engineers using GitHub and Agile workflows to deliver features on a tight timeline.",
+      ],
+      tech: [
+        "Svelte",
+        "SvelteKit",
+        "PostgreSQL",
+        "Drizzle ORM",
+        "Hono",
+        "R2/AWS",
+        "TailwindCSS"
+      ],
+      projects: [
+        { name: "clubly", url: "https://clubly.org" },
+      ],
+    },
+    {
       role: "Software Engineer Fellow",
       company: "Headstarter",
       image: "/headstarter.svg",

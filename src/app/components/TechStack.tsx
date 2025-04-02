@@ -1,24 +1,34 @@
 export default function TechStack() {
-    const techStack = [
-      "C/C++", "C#", "Python", "Java", "JavaScript", "TypeScript", "HTML/CSS",
-      "Node.js", "Express.js", "React Native", "React.js", "Next.js", "Svelte", "SvelteKit",
-      "Django", "Git", "Docker", "SSH", "SQLite", "MongoDB", "Firebase"
-    ];
-  
-    return (
-      <section className="mb-8">
-        <h2 className="text-xl font-bold">tech stack</h2>
-        <div className="text-sm mt-4 flex flex-wrap gap-2">
-          {techStack.map((tech, index) => (
-            <span
-              key={index}
-              className="bg-gray-100 text-xs text-gray-800 px-2 py-1 rounded-full cursor-pointer transition duration-1s ease-in-out hover:bg-gray hover:opacity-80"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-      </section>
-    );
-  }
-  
+  const techStack = {
+    Languages: ["C/C++", "C#", "Python", "Java", "JavaScript", "TypeScript", "HTML/CSS"],
+    "Frameworks & Libraries": [
+      "React.js", "React Native", "Next.js", "Svelte", "SvelteKit", "Express.js", "Django", "Hono"
+    ],
+    "Tools, Cloud & Databases": [
+      "Node.js", "Git", "Docker", "SSH", "PostgreSql", "SQLite", "MongoDB", "Firebase", "Drizzle ORM", "R2", "AWS"
+    ]
+  };
+
+  return (
+    <section className="mb-8">
+      <h2 className="text-xl font-bold">tech stack</h2>
+      <div className="mt-4 space-y-4">
+        {Object.entries(techStack).map(([category, items], idx) => (
+          <div key={idx}>
+            <h3 className="text-sm font-semibold text-gray-700">{category}</h3>
+            <div className="text-sm mt-2 flex flex-wrap gap-2">
+              {items.map((tech, index) => (
+                <span
+                  key={index}
+                  className="bg-gray-100 text-xs text-gray-800 px-2 py-1 rounded-full cursor-pointer transition duration-300 ease-in-out hover:bg-gray-200 hover:opacity-80"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
