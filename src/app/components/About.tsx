@@ -7,11 +7,8 @@ export default function About() {
         <p className=" text-sm  mt-2">
           <b>(B.S) Computer Science</b> with a minor in <b>Tech Management</b> at UC Davis
         </p>
-        <p className="text-sm  mt-2">
-        enjoy learning new skills and building innovative products that are user centric and solves real world problems.
-        </p>
         <p className=" text-sm  mt-2">
-          <b>Hobbies:</b> Video Editing, Cool ChatGPT Prompts, 3D-Modeling, Streaming, Badminton
+          <b>Other Hobbies:</b> Video Editing, Cool ChatGPT Prompts, 3D-Modeling, Streaming, Badminton
         </p>
         <div className=" text-sm mt-4 flex space-x-4 text-blue-500 underline">
         <a
