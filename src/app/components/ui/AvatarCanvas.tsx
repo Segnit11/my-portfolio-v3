@@ -7,7 +7,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import * as THREE from "three";
 
 function MeshComponent() {
-  const fileUrl = "/avatar3d/avatar.gltf"; // ✅ Must be in /public/avatar3d/
+  const fileUrl = "/avatar3d/avatar.gltf"; 
   const meshRef = useRef<THREE.Group>(null);
   const gltf = useLoader(GLTFLoader, fileUrl);
 
