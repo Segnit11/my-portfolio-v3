@@ -256,7 +256,8 @@ export default function Experience() {
                   ))}
                 </ul>
                 <div className="mt-2 text-sm flex flex-wrap gap-2">
-                  {exp.projects.map((proj, idx) => (
+                {exp.projects.map((proj, idx) => (
+                  "url" in proj && proj.url ? (
                     <a
                       key={idx}
                       href={proj.url}
@@ -266,7 +267,10 @@ export default function Experience() {
                     >
                       {proj.name}
                     </a>
-                  ))}
+                  ) : (
+                    <span key={idx} className="text-gray-500">{proj.name}</span>
+                  )
+                ))}
                 </div>
               </div>
             </div>
