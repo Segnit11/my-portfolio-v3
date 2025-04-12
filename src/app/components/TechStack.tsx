@@ -67,7 +67,6 @@ export default function TechStack() {
     R2: "hover:bg-cyan-200",
     "Android Studio": "hover:bg-lime-200"
   };
-  
 
   return (
     <section className="mb-8">
@@ -80,7 +79,7 @@ export default function TechStack() {
               {items.map((tech, index) => (
                 <span
                   key={index}
-                  className={`bg-gray-100 text-xs text-gray-800 px-3 py-1 rounded-full cursor-pointer transition duration-300 ease-in-out ${colorMap[tech] || "hover:bg-gray-200"}`}
+                  className={`bg-gray-100 text-xs text-gray-800 px-3 py-1 rounded-full cursor-pointer transition duration-300 ease-in-out ${colorMap[tech as keyof typeof colorMap] || "hover:bg-gray-200"}`}
                 >
                   {tech}
                 </span>
