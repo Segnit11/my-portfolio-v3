@@ -8,27 +8,93 @@ export default function Experience() {
 
   const experiences = [
     {
-      role: "Software Engineer",
-      company: "Aggieworks",
-      image: "/aw.jpeg",
-      duration: "Oct 2024 - current",
-      summary: "Working on clubly.org, building an internal tool for UC Davis student organizations.",
+      role: "Software Engineer Intern",
+      company: "Seeds of Success",
+      image: "/seed-of-success-pic.png",
+      duration: "Dec 2024 – Current",
+      summary:
+        "Building AI-powered systems to enhance chatbot accessibility for mental health and educational support.",
       bullets: [
-        "Built and iterated on the admin panel for clubly.org, enabling easier club onboarding and management, helping 12,000+ UC Davis students discover and connect with 600+ campus organizations",
-        "Collaborated with fellow engineers using GitHub and Agile workflows to deliver features on a tight timeline.",
+        "Develop AI-driven NLP models with TensorFlow and spaCy for Project CARLA, boosting chatbot accuracy by 40% and supporting 2,000+ students with mental health, basic needs, and higher education resources.",
+        "Implemented automated web scraping pipelines with Puppeteer, extracting and aggregating 10,000+ school data points, enhancing chatbot accuracy by 35%.",
+        "Developing and integrating RESTful APIs with Express.js and MongoDB to manage student data while building React dashboards."
       ],
       tech: [
-        "Svelte",
-        "SvelteKit",
-        "PostgreSQL",
-        "Drizzle ORM",
-        "Hono",
-        "R2/AWS",
-        "TailwindCSS"
+        "React", "Python", "Express.js", "TensorFlow", "spaCy", "Puppeteer", "MongoDB", "OpenAI"
       ],
       projects: [
-        { name: "clubly", url: "https://clubly.org" },
+        { name: "Project CARLA", url: "http://seedsofsuccess.us/" }
+      ]
+    },
+    {
+      role: "Automation Systems Programmer Intern",
+      company: "Marvin Windows",
+      image: "/marvin-automation.png",
+      duration: "May 2024 – Dec 2024",
+      summary:
+        "Engineered control system tools and data pipelines to optimize production flow and reduce material waste.",
+      bullets: [
+        "Developed 5 GUI interfaces with Ignition and Python, enhancing system control and reducing errors by 15%.",
+        "Optimized MS SQL Server queries using stored procedures, improving work efficiency by 30%.",
+        "Designed and implemented a recut feature that verifies if parts are cut correctly and redirects them for proper cutting, saving over $100,000 annually in material waste."
       ],
+      tech: ["Ignition", "Python", "MS SQL Server"],
+      projects: [
+        { name: "Recut System"},
+        { name: "GUI Control Interfaces"}
+      ]
+    },
+    {
+      role: "Software Engineer Intern",
+      company: "Marvin Windows",
+      image: "/marvin-swe.png",
+      duration: "May 2023 – April 2024",
+      summary:
+        "Built full-stack production tools that streamlined operations and improved daily reporting efficiency.",
+      bullets: [
+        "Created an end-of-shift reporting tool that reduced report generation time by 40% and improved data accuracy, providing supervisors with daily summaries via email.",
+        "Collaborated with Design and Product teams to develop a machine metrics tool using APIs, C#, SQL, Azure, and React to track and display machine status on production line TV boards, improving operational efficiency by 45%."
+      ],
+      tech: ["React", "JavaScript", "C#", "SQL", "Git", "Azure"],
+      projects: [
+        { name: "Shift Report Tool"},
+        { name: "Machine Metrics Tool"}
+      ]
+    },
+    {
+      role: "Computer Science Tutor",
+      company: "Concordia College",
+      image: "/concordia-college-pic.png",
+      duration: "Jan 2025 – Current",
+      summary:
+        "Tutoring foundational and intermediate computer science courses, supporting students with programming and algorithm concepts.",
+      bullets: [
+        "Provided academic support for CS100 (Intro to Computer Science) and CS200 (Fundamental Structures and Algorithms).",
+        "Assisted students in understanding programming logic, data structures, recursion, and algorithmic thinking.",
+        "Held one-on-one and group tutoring sessions to reinforce lecture content and support coursework success."
+      ],
+      tech: ["Python", "Java", "Algorithms", "Data Structures"],
+      projects: []
+    },
+    {
+      role: "Project Manager",
+      company: "Computer Science Society",
+      image: "/cssociety-logo.png",
+      duration: "Aug 2024 – Mar 2025",
+      summary:
+        "Led web development and community engagement efforts for Concordia's Computer Science Society.",
+      bullets: [
+        "Led the development and launch of the club’s website, implementing a CI/CD pipeline for seamless deployment.",
+        "Organized tri-college hackathons that engaged 15–20 students from neighboring institutions.",
+        "Mentored fellow students on resume building, job applications, and strategies for entering the tech industry."
+      ],
+      tech: ["CI/CD", "Web Development", "Leadership", "Mentorship"],
+      projects: [
+        {
+          name: "CSS Website",
+          url: "https://css-website-staging.vercel.app/"
+        }
+      ]
     },
     {
       role: "Software Engineer Fellow",
@@ -55,73 +121,47 @@ export default function Experience() {
         "Clerk",
       ],
       projects: [
-        { name: "rizzgpt", url: "https://rizzgpt.thaianle.com" },
-        { name: "talkaroo", url: "https://talkaroo-lac.vercel.app/" },
-        { name: "applyEZ", url: "https://applyez-waitlist.vercel.app/" },
-        { name: "FlashAI", url: "https://flashai.thaianle.com" },
-        { name: "pantrypal", url: "https://pantry-pal-eta.vercel.app/" },
+        // { name: "rizzgpt", url: "https://rizzgpt.thaianle.com" },
+        // { name: "talkaroo", url: "https://talkaroo-lac.vercel.app/" },
+        // { name: "applyEZ", url: "https://applyez-waitlist.vercel.app/" },
+        // { name: "FlashAI", url: "https://flashai.thaianle.com" },
+        // { name: "pantrypal", url: "https://pantry-pal-eta.vercel.app/" },
       ],
     },
     {
-      role: "Software Engineer Intern",
-      company: "UC Davis Health",
-      image: "/ucdhealth.svg",
-      duration: "Oct 2023 - Mar 2024",
+      role: "Software Developer Intern",
+      company: "Concordia College",
+      image: "/concordia-college-pic.png",
+      duration: "Oct 2023 – Feb 2024",
       summary:
-        "Built VB.NET software for tumor dye detection — improved speed and accuracy significantly.",
+        "Supported academic technology development and enhancements, focusing on Concordia's Moodle learning platform.",
       bullets: [
-        "Developed microscopy software in VB.net/C# for tumor dye detection.",
-        "250% increase in detection rate, 600% clarity boost.",
-        "Optimized software performance with refined algorithms. 150% faster runtime.",
-        "Created a calibration tool for accurate surgical adjustments improving accuracy.",
-        "Automated DUET image renaming using PowerShell. Saved 10+ hours and ensured confidentiality.",
+        "Developed and maintained Moodle pages using HTML, CSS, and PHP to improve student and faculty user experience.",
+        "Implemented backend features using MySQL for dynamic content and database-driven functionality.",
+        "Collaborated with IT and academic departments to enhance educational tools and ensure cross-platform consistency."
       ],
-      tech: ["VB.NET", "C#", "PowerShell"],
+      tech: ["HTML", "CSS", "PHP", "MySQL", "Moodle"],
       projects: [
         {
-          name: "youtube video",
-          url: "https://www.youtube.com/watch?v=mrX9GUh_ES8&feature=youtu.be",
-        },
-      ],
+          name: "Moodle Enhancements",
+          url: "https://www.concordiacollege.edu/"
+        }
+      ]
     },
     {
-      role: "Product Manager",
-      company: "LLD Pool & Spa Co.",
-      image: "/lld.svg",
-      duration: "Dec 2021 - Jan 2024",
+      role: "Resident Assistant",
+      company: "Concordia College",
+      image: "/concordia-college-pic.png",
+      duration: "Aug 2022 – May 2023",
       summary:
-        "Redesigned flagship e-commerce site and led a cross-functional team of 5.",
+        "Demonstrated leadership and community engagement while supporting a diverse group of students in a residential setting.",
       bullets: [
-        "Spearheaded a successful redesign of linhlinhdan.com, the company's flagship e-commerce platform.",
-        "Led a team of 5, including content writers, developers, UI/UX designers, and marketers.",
-        "Worked closely with the CEO to develop a product roadmap, prioritize features, and manage the product backlog.",
+        "Fostered a positive campus community by organizing inclusive and engaging events, promoting cultural awareness and diversity.",
+        "Mentored ethnically diverse students, serving as a dependable leader and role model throughout the academic year.",
+        "Handled administrative responsibilities, emergency responses, rounds, and event planning with professionalism and time management."
       ],
-      tech: ["Adobe", "Product Management"],
-      projects: [{ name: "linhlinhdan.com", url: "https://linhlinhdan.com" }],
-    },
-    {
-      role: "Founder",
-      company: "public class APCS",
-      image: "/apcs.png",
-      duration: "Aug 2021 - May 2022",
-      summary:
-        "Designed and taught personalized APCSA and APCSP courses, guiding three students to score 4 or higher on their AP exams.",
-      bullets: [
-        "Designed a comprehensive educational curriculum for AP Computer Science A and Principles courses.",
-        "Provided personalized tutoring in programming basics, data structures, algorithms, and problem-solving.",
-        "Achieved significant improvement in students' understanding and performance in AP Computer Science courses.",
-      ],
-      tech: ["Java"],
-      projects: [
-        {
-          name: "APCSA",
-          url: "https://drive.google.com/drive/folders/1XJ-H3vIF-TrgJWGewUAqEFj6bvA64GKi",
-        },
-        {
-          name: "APCSP",
-          url: "https://drive.google.com/drive/folders/1aozieTdWLkdw1g-RcM1jEmitWnDqroa9",
-        },
-      ],
+      tech: [],
+      projects: []
     },
   ];
 
@@ -161,18 +201,19 @@ export default function Experience() {
                     <img
                       src={exp.image}
                       alt={`${exp.company} logo`}
-                      className="w-10 h-10 rounded-full object-cover"
+                      className="w-10 h-10 object-contain bg-white p-1 rounded-md"
                     />
+
 
                     {/* Text: Company + Role */}
                     <div>
                       <div className="flex flex-row">
                         <p className="font-semibold">{exp.company}</p>
-                        <span className="ml-1 mt-1 text-gray-400">
+                        <span className="ml-1 mt-1 text-black font-bold">
                           {isOpen ? (
-                            <ChevronUp size={16} />
+                            <ChevronUp size={20} strokeWidth={3.5} />
                           ) : (
-                            <ChevronDown size={16} />
+                            <ChevronDown size={20} strokeWidth={3.5} />
                           )}
                         </span>
                       </div>

@@ -10,21 +10,31 @@ interface ArchiveItem {
 
 const archives: ArchiveItem[] = [
   {
-    title: "rizzGPT",
-    tags: ["React/NextJS", "Firebase", "Pinecone", "LangChain", "OpenAI" ],
-    website: "https://rizzgpt.thaianle.com/auth",
-    source: "https://github.com/xntle/rizz-gpt",
-    status: "completed",
-  },
-  {
-    title: "happyjar",
-    tags: ["React Native", "PostgreSQL", "Supabase"],
+    title: "Customer Churn Prediction Model",
+    tags: ["React","Python", "scikit-learn", "TensorFlow", "R", "Pandas", "ML", "Gemini", "Firebase"],
+    website: "",
+    source: "",
     status: "inprogress",
   },
   {
-    title: "ineedtolockin.com",
-    tags: ["TypeScript", "Next.JS"],
-    source: "https://github.com/xntle/ineedtolockin",
+    title: "Pokédex Web App",
+    tags: [
+      "Next.js",
+      "React",
+      "Typescript",
+      "TailwindCSS",
+      "Java",
+      "SpringBoot",
+      "Docker",
+      "PostgreSQL",
+    ],
+    source: "",
+    status: "inprogress",
+  },
+  {
+    title: "PremierAI",
+    tags: ["TypeScript", "Next.JS", "OpenAI"],
+    source: "",
     status: "inprogress",
   },
 ];

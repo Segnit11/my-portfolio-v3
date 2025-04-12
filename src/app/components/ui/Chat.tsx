@@ -86,8 +86,35 @@ const Chat = () => {
     if (e.key === "Enter") sendMessage();
   };
 
+  const [highlightIcon, setHighlightIcon] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isOpen) {
+        setHighlightIcon(true);
+        setTimeout(() => setHighlightIcon(false), 1500);
+      }
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isOpen]);
+
   return (
     <div className="fixed bottom-4 right-4 z-50 font-sans">
+      {/* Tooltip */}
+      <AnimatePresence>
+        {highlightIcon && !isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -5 }}
+            animate={{ opacity: 1, y: -10 }}
+            exit={{ opacity: 0, y: -5 }}
+            transition={{ duration: 1.5 }}
+            className="absolute bottom-20 right-2 bg-[#2a2a2a] text-gray-300 text-xs px-3 py-1 rounded shadow border border-gray-700"
+          >
+            Psst… you can talk to me :-)
+          </motion.div>
+        )}
+      </AnimatePresence>
       {/* Trigger */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
@@ -95,31 +122,54 @@ const Chat = () => {
       >
         {!isOpen && (
           <motion.span className="px-4 py-0.5 rounded-full bg-white border border-black text-sm">
-            an ai (beta)
+            Segnify (beta)
           </motion.span>
         )}
-        <Image
-          src="/avatar.png"
-          alt="Chat Avatar"
-          width={55}
-          height={55}
+        {/* Animated Avatar */}
+        <motion.div
+          animate={
+            highlightIcon
+              ? {
+                  scale: [1, 1.2, 1],
+                  boxShadow: "0 0 50px rgba(0,0,0,4.9)",
+                }
+              : {}
+          }
+          transition={{ duration: 1.5, ease: "easeInOut" }}
           className="rounded-full"
-        />
+        >
+          <Image
+            src="/avatar.png"
+            alt="Chat Avatar"
+            width={55}
+            height={55}
+            className="rounded-full"
+          />
+        </motion.div>
       </motion.button>
 
       {/* Chat Box */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="absolute bottom-16 right-0 w-[90vw] sm:w-[50vh] bg-white rounded-xl border border-gray-200 p-4 shadow-md max-w-sm"
+            className="absolute bottom-16 right-0 w-[90vw] sm:w-[50vh] bg-[#1e1e1e] text-gray-200 rounded-xl border border-gray-700 p-4 shadow-lg max-w-sm"
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.25 }}
           >
-            <h2 className="text-sm font-bold mb-1">
-              an ai <span className="text-gray-600 font-normal">(beta)</span>:
-            </h2>
+            <div className="flex items-center gap-2 mb-2">
+              <Image
+                src="/segni-pic2.jpg"
+                alt="Segni Tulu"
+                width={45}
+                height={45}
+                className="rounded-full object-cover border border-gray-500"
+              />
+              <h2 className="text-sm font-bold">
+                Segnify <span className="text-gray-400 font-normal">(beta)</span>:
+              </h2>
+            </div>
 
             {/* Messages */}
             <div className="mt-2 mb-3 max-h-80 overflow-y-auto space-y-2 text-sm pr-1 scroll-smooth">
@@ -128,8 +178,8 @@ const Chat = () => {
                   key={i}
                   className={`${
                     msg.role === "assistant"
-                      ? "text-gray-800 italic"
-                      : "text-right text-black"
+                      ? "text-gray-300 italic"
+                      : "text-right text-white"
                   }`}
                 >
                   {msg.content}
@@ -139,21 +189,20 @@ const Chat = () => {
             </div>
 
             {/* Input */}
-            <div className="flex items-center space-x-2 border-t pt-2">
+            <div className="flex items-center space-x-2 border-t border-gray-600 pt-2">
               <input
                 type="text"
                 placeholder="ask me :-)"
-                className="w-full text-sm text-black placeholder-gray-400 focus:outline-none"
+                className="w-full text-sm text-white bg-[#2a2a2a] placeholder-gray-400 border border-gray-600 rounded px-2 py-1 focus:outline-none"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
               />
-
               <AnimatePresence>
                 {input.trim() && (
                   <motion.button
                     onClick={sendMessage}
-                    className="text-sm px-2 py-1 text-blue-600 hover:underline"
+                    className="text-sm px-2 py-1 text-blue-400 hover:underline"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.8 }}
@@ -166,19 +215,19 @@ const Chat = () => {
             </div>
 
             {/* Footer */}
-            <div className="mt-3 text-xs text-gray-700 flex justify-between">
+            <div className="mt-3 text-xs text-gray-400 flex justify-between">
               <span>rather talk to human An?</span>
               <div className="space-x-2">
                 <Link
-                  href="mailto:thaianle.work@gmail.com"
-                  className="text-blue-600 underline"
+                  href="mailto:stulujr@cord.edu"
+                  className="text-blue-400 underline"
                 >
                   mail
                 </Link>
                 <Link
-                  href="https://www.linkedin.com/in/thai-an-le/"
+                  href="https://www.linkedin.com/in/segnitulu/"
                   target="_blank"
-                  className="text-blue-600 underline"
+                  className="text-blue-400 underline"
                 >
                   linkedin
                 </Link>

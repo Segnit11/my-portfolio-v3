@@ -12,67 +12,117 @@ interface Project {
   video?: string;
   website?: string;
   source?: string;
+  backend_source?: string;
+  frontend_source?: string;
   demo?: string;
 }
 const projects: Project[] = [
   {
-    title: "Clubly",
-    dates: "Aug 2024 – Present",
+    title: "Customer Churn Prediction Model",
+    dates: "Feb 2025 - Current",
     description: `
-  Collaborated with developers, designers, and marketers to launch a platform helping 12,000+ UC Davis students discover and connect with 600+ campus organizations.
-      `,
-    tags: [
-      "Svelte",
-      "SvelteKit",
-      "PostgreSQL",
-      "Drizzle ORM",
-      "Hono",
-      "Cloudflare",
-      "TailwindCSS",
-    ],
-    video: "/clublygif.mp4",
-    website: "https://clubly.org",
-  },
-  {
-    title: "nodi ai",
-    dates: "July 2024 – Aug 2024",
-    description:
-      "Developed an AI-powered study tool that turns files into summaries, quizzes, and flashcards winning 1st place and a $1,000 grant at FlagUp, IU's startup competition.",
-    tags: ["React", "Next.js", "Node.js", "Firebase", "Gemini AI"],
-    video: "/nodi.mp4",
-    website: "https://nori-app.vercel.app/",
-  },
-  {
-    title: "flock",
-    dates: "Feb 2023 – Feb 2023",
-    description: `
-    Built at SacHacks 2025, Flock helps international students navigate the U.S. visa process with personalized roadmaps, a fact-checked AI chatbot, and a peer support forum.
+    Built a machine learning system using Python, scikit-learn, and TensorFlow to predict customer churn of a Bank, reducing potential churn by 15% in Q1. Processed 5,000 customer records with R and Pandas and improved model accuracy by 15% through hyperparameter tuning.
     `,
+    tags: ["React","Python", "scikit-learn", "TensorFlow", "R", "Pandas", "ML", "Gemini", "Firebase"],
+    video: "/churn-prediction-demo.mp4",
+    website: "",
+    source: "https://github.com/Segnit11/ChurnPrediction.git"
+  },
+  {
+    title: "Pokédex Web App",
+    dates: "Nov 2024 – Feb 2025",
+    description: `
+Built a Pokedex app with Spring Boot API and Next.js frontend, reducing latency by 40%. Used PostgreSQL, Dockerized backend, and automated deployment with GitLab CI/CD. Secured interactions with Clerk.js authentication.
+`,
     tags: [
       "Next.js",
-      "LangChain",
-      "PostgreSQL",
+      "React",
+      "Typescript",
       "TailwindCSS",
-      "Python",
+      "Java",
+      "SpringBoot",
       "Docker",
-      "Railway",
-      "Vercel",
+      "PostgreSQL",
     ],
-    video: "/flock.mp4",
-    website: "https://sachacks2025-intlstudents.vercel.app/",
-    source: "https://github.com/PowerOfAPoint/sachacks2025-intlstudents",
-    demo: "https://www.youtube.com/watch?v=4p2W-XpW5kE&t=10s",
+    video: "/pokemon-web.mp4",
+    website: "",
+    frontend_source: "https://github.com/Segnit11/pokedex-frontend",
+    backend_source: "https://github.com/Segnit11/Backend_Pokedex",
   },
   {
-    title: "Tumor Detecting Microscope",
-    dates: "Oct 2023 – Mar 2024",
-    description:
-      "Facilitate rapid and precise detection of dye injections in tumors.",
-    tags: ["C#", "VB.net"],
-    video: "/lab.mp4",
-    demo: "https://www.youtube.com/watch?v=mrX9GUh_ES8&feature=youtu.be",
+    title: "GNAC Scheduling Optimization Tool",
+    dates: "Sep 2024 – Dec 2024",
+    description: `
+    Transformed soccer match scheduling for the Great Northeast Athletic Conference using linear programming in R with lpSolve. Reduced conflicts by 60% and achieved 95% scheduling accuracy across 100+ games. Trained 10+ users to implement and manage the optimized system.
+    `,
+    tags: ["R", "lpSolve", "Linear Programming", "Optimization", "Scheduling"],
+    image: "/gnac.png",
+    source: "https://github.com/Segnit11/Great-Northeast-Athletic-Conference-Scheduling-Optimization-Tool"
   },
+  {
+    title: "Keypad-Controlled Lock System",
+    dates: "Sep 2024 – Dec 2024",
+    description: `
+    Created during an independent study on PIC microcontrollers. Built a keypad-controlled locking system using a PIC18F4620, stepper motor, and speaker for sound feedback. Programmed with C, assembly, and MATLAB to control hardware and implement secure access logic.
+    `,
+    tags: [
+      "PIC18F4620",
+      "C",
+      "Assembly",
+      "MATLAB",
+      "Stepper Motor",
+      "Embedded Systems"
+    ],
+    video: "/keypad-controlled-lock-system.mp4",
+    source: "https://github.com/Segnit11/PIC10F200.git",
+  },
+  {
+    title: "The Chefs Laundry Android Game",
+    dates: "Jan 2024 – April 2024",
+    description: `
+     Driven by a passion for cooking, I developed a restaurant management Android game that challenges players’ food prep, time management, and decision-making skills.`,
+    tags: ["Android Studio", "Kotlin", "XML", "Gradle"],
+    video: "/chef_laundry.mp4",
+    source: "https://github.com/Segnit11/The-Chefs-Laundry-Android-Mobile-App.git",
+  },
+  {
+    title: "Newroz Kebab Restaurant Website",
+    dates: "Sep 2023 - Dec 2023",
+    description: `
+    Team-based project (~65 hours) to build a responsive website for a local restaurant. Increased online engagement by attracting 50+ new customers monthly and reduced order processing time by 30%. Included a reservation system with admin controls, user login, and email notifications.
+    `,
+    tags: [
+      "PHP",
+      "SQL",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Responsive Design"
+    ],
+    video: "/nrk.mp4",
+    source: "https://github.com/Segnit11/NewRoz_Kebab_Website"
+  },
+  {
+    title: "CSS Website",
+    dates: "Aug 2023 - Sep 2023",
+    description:
+      "Led the launch of the Computer Science Society’s website, implementing a CI/CD pipeline for seamless and automated deployment.",
+    tags: ["React", "Next.js", "Chakra UI", "Email JS", "MySQL"],
+    video: "/css-website.mp4",
+    website: "https://css-website-staging.vercel.app/",
+    source: "https://github.com/Segnit11/Computer-Science-Society-Website",
+  },
+  {
+    title: "Interactive Physics Quiz App",
+    dates: "Sep 2021 – Dec 2021",
+    description:
+      "A Windows App that simulates a creative quiz using Java and an interactive GUI on NetBeans by utilizing Adobe Photo-shop with an aim to make learning physics more interactive and engaging for middle school students.",
+    tags: ["Java", "NetBeans", "JFrame", "Swing GUI"],
+    video: "/interactive_physics.mp4",
+    source: "https://github.com/Segnit11/Interactive-Physics.git",
+  }
 ];
+
 
 export default function Projects() {
   return (
@@ -155,6 +205,26 @@ export default function Projects() {
                     className="flex items-center gap-1 px-2 py-1 border rounded-full hover:bg-gray-100 transition"
                   >
                     <FaGithub className="text-sm" /> Source
+                  </a>
+                )}
+                {project.frontend_source && (
+                  <a
+                    href={project.frontend_source}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 px-2 py-1 border rounded-full hover:bg-gray-100 transition"
+                  >
+                    <FaGithub className="text-sm" /> Front-End
+                  </a>
+                )}
+                {project.backend_source && (
+                  <a
+                    href={project.backend_source}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 px-2 py-1 border rounded-full hover:bg-gray-100 transition"
+                  >
+                    <FaGithub className="text-sm" /> Back-End
                   </a>
                 )}
               </div>
