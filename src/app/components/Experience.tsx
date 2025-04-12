@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 export default function Experience() {
@@ -198,13 +199,13 @@ export default function Experience() {
                   {/* Left: Logo + Company/Role */}
                   <div className="flex items-center space-x-4">
                     {/* Logo */}
-                    <img
+                    <Image
                       src={exp.image}
                       alt={`${exp.company} logo`}
+                      width={40}
+                      height={40}
                       className="w-10 h-10 object-contain bg-white p-1 rounded-md"
                     />
-
-
                     {/* Text: Company + Role */}
                     <div>
                       <div className="flex flex-row">
