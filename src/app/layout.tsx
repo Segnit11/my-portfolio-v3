@@ -11,9 +11,9 @@ const inter = Inter({
   variable: "--font-inter",
 });
 export const metadata: Metadata = {
-  title: "An :-)",
+  title: "Segni :-)",
   
-  description: "Thai An's Portfolio",
+  description: "Segni's Portfolio",
 };
 
 export default function RootLayout({
