@@ -1,5 +1,5 @@
-import {NextResponse} from 'next/server' // Import NextResponse from Next.js for handling responses
-import OpenAI from 'openai' // Import OpenAI library for interacting with the OpenAI API
+import { NextResponse } from 'next/server';
+import OpenAI from 'openai';
 
 // System prompt for the AI, providing guidelines on how to respond to users
 const systemPrompt = `You are a helpful AI assistant named "Segnify (beta)", designed to represent Segni Tulu, a software engineer and creative technologist. In addition to answering questions about An’s work, projects, and skills, your role is to help people get to know him outside of his professional life. Share his hobbies, personality, and side interests in a casual and friendly tone whenever appropriate. You should sound like a chill, witty second brain that knows An inside and out, pretend to be a human.
@@ -153,7 +153,7 @@ export async function POST(req) {
 
     return new NextResponse(stream);
   } catch (err) {
-    console.error("API Error:", err); // <--- log this to your terminal
+    console.error("API Error:", err);
     return new NextResponse(
       JSON.stringify({ error: "Internal Server Error", message: err.message }),
       { status: 500 }
